@@ -1,0 +1,12 @@
+Log created: 2021-11-12T23:18:20.486014000Z
+Process ID:  83898 (0x147ba)
+Parent PID:  1 (0x1)
+Executable:  /usr/lib/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: pwn
+Arg[3]: --startvm
+Arg[4]: bd2a80be-1620-4ec7-afe1-2f28f5b1a183
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2

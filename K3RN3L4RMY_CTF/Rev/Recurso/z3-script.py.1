@@ -1,0 +1,16 @@
+import z3
+
+
+nums = [z3.BitVec("num_%i" % i, 64) for i in range(4)]
+
+solver = z3.Solver()
+solver.add(nums[0] == 102)
+solver.add(nums[1] & 1337 == 1057)
+solver.add(nums[1] | 1337 == 28025)
+solver.add(nums[1] ^ 1337 >= 26960)
+solver.add(nums[1] ^ 1337 <= 269700)
+solver.add(nums[2] ^ nums[3] == 28)
+solver.add(nums[2] & nums[3] == 99)
+
+if solver.check() == z3.sat:
+    print(solver.model())
