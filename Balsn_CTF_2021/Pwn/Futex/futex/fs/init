@@ -1,0 +1,14 @@
+#!/bin/sh
+
+mount -t tmpfs none /tmp
+mount -t proc none /proc
+mount -t devtmpfs none /dev
+
+echo 1 > /proc/sys/kernel/dmesg_restrict
+echo 1 > /proc/sys/kernel/kptr_restrict
+
+udhcpc -i eth0 -p /tmp/udhcpc.pid -S -s /etc/udhcpc.sh 
+
+setsid cttyhack setuidgid 0 sh
+
+poweroff -f
